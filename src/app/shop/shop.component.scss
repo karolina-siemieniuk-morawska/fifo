@@ -1,0 +1,33 @@
+.shop {
+  background-color: #d4d4d4;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  h1 {
+    font-size: 40px;
+  }
+  .buy, .sell {
+    box-shadow: 0px 0px 5px 5px #999; 
+    background-color: #fff;
+    border-radius: 5px;
+    height: 350px;
+    width: 400px;
+    flex-direction: column;
+    label {
+      font-weight: 700;
+      input {
+        margin-top: 15px;
+        border-radius: 5px;
+        width: 100%;
+      }
+    }
+  }
+  .error {
+    color: tomato;
+    font-weight: 700;
+    text-align: center;
+  }
+  .price {
+    color: green;
+  }
+}

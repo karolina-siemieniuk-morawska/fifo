@@ -1,0 +1,34 @@
+<div class="shop d-flex justify-content-center align-items-center">
+  <h1 class="mb-5">Brick shop</h1>
+
+  <div class="forms d-flex">
+    <form class="buy  d-flex justify-content-between p-5 m-4" #buyForm="ngForm" (submit)="buyBricks(buyForm.value); buyForm.reset()">
+      <label class="d-block">
+        Number of bricks (min. 1):
+        <input type="number" min="1" name="quantity" ngModel required class="d-block" pattern="^[+]?[1-9]\d*\.?[0]*$">
+      </label>
+    
+      <label class="d-block">
+        Price per brick (min. 0.1):
+        <input type="number" min="0.1" step="0.1" name="price" ngModel required class="d-block" 
+               pattern="^(?!^0*$)(?!^0*\.0*$)^\d{1,9}(\.\d{1,1})?$">
+      </label>
+    
+      <button type="submit" class="btn btn-primary" [disabled]="!buyForm.valid">Buy bricks</button>
+    </form>
+    
+  
+    <form class="sell d-flex justify-content-between p-5 m-4" #sellForm="ngForm" (submit)="sellBricks(sellForm.value); sellForm.reset()">
+      <label class="d-block">
+        Number of bricks (min. 1):
+        <input type="number" min="1" name="quantity" ngModel required class="d-block" pattern="^[+]?[1-9]\d*\.?[0]*$">
+      </label>
+    
+      <h4 *ngIf="orderValue" class="price">Price: {{orderValue}}</h4>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!sellForm.valid">Sell bricks</button>
+
+      <p *ngIf="quantityError" class="error">You don't have enough bricks to make this sell</p>
+    </form>
+  </div>
+</div>

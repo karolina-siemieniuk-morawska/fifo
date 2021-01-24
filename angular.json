@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fifo"
+    }
+  },
+  "defaultProject": "fifo",
+  "cli": {
+    "analytics": false
+  }
 }
